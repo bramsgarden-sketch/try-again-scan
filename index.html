@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Try Again – willekeurige scanmelding</title>
+<style>
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin:0; min-height:100vh; display:grid; place-items:center; padding:20px;
+       background:radial-gradient(circle at top,#26344f,#090d16 70%); color:#fff;
+       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
+.card { width:min(900px,100%); text-align:center; padding:clamp(24px,6vw,64px);
+        border:1px solid #ffffff2b; border-radius:28px; background:#ffffff10;
+        box-shadow:0 20px 70px #0008; }
+.small { font-size:clamp(14px,2vw,18px); opacity:.72; letter-spacing:.12em; text-transform:uppercase; }
+#phrase { font-size:clamp(36px,8vw,76px); line-height:1.12; font-weight:850;
+          overflow-wrap:anywhere; margin:28px 0 10px; }
+.hint { margin-top:22px; font-size:14px; opacity:.65; }
+</style>
+</head>
+<body>
+<main class="card" role="dialog" aria-live="polite" aria-label="Willekeurige scanmelding">
+  <div class="small">Scanmelding</div>
+  <div id="phrase">Even laden…</div>
+  <div class="hint">Bij iedere nieuwe opening verschijnt een willekeurige zin.</div>
+</main>
+<script>
+const phrases = ["Je hebt mij gescand.", "Begin opnieuw.", "Probeer het opnieuw.", "Try again.", "Je hebt mij al gescand.", "Scan mij nog eens.", "Opnieuw proberen.", "Dat is niet correct, probeer opnieuw.", "Je moet opnieuw beginnen.", "Scan mislukt, probeer opnieuw.", "Je hebt de verkeerde scan uitgevoerd.", "Begin helemaal opnieuw.", "Probeer het nog een keer.", "Je scan is niet geldig.", "Nog één keer proberen.", "Je hebt mij verkeerd gescand.", "Start opnieuw.", "Helaas, probeer opnieuw.", "Je moet mij opnieuw scannen.", "Scan opnieuw om verder te gaan.", "Oeps, probeer nog eens.", "Dat ging niet helemaal goed.", "Je hebt een tweede poging nodig.", "Probeer het vanaf het begin.", "Scan opnieuw en probeer verder.", "Je hebt mij niet goed herkend.", "Opnieuw vanaf nul beginnen.", "Deze poging is mislukt.", "Probeer een nieuwe scan.", "Je bent te snel geweest, probeer opnieuw.", "Begin nog maar eens opnieuw.", "Je scan werd niet herkend.", "Helaas, dit klopt niet.", "Doe nog een poging.", "Probeer het nogmaals.", "Je hebt mij opnieuw gescand.", "Scan nog een keertje.", "Dat was de verkeerde poging.", "Start de scan opnieuw.", "Je moet het opnieuw proberen.", "Oei, dat ging fout.", "Helaas, opnieuw beginnen.", "Je hebt de verkeerde keuze gemaakt.", "Probeer het deze keer goed.", "Scan opnieuw voor bevestiging.", "Je bent mij vergeten te scannen.", "Nog een poging wagen.", "Begin weer helemaal vooraan.", "Deze scan is mislukt.", "Probeer het nog één keer.", "Je hebt mij dubbel gescand.", "Dat herken ik niet, probeer opnieuw.", "Scan opnieuw en wacht even.", "Je poging is niet gelukt.", "Probeer een andere aanpak.", "Begin opnieuw vanaf stap één.", "Je hebt een fout gemaakt.", "Helaas, nog een keer.", "Scan mij opnieuw alsjeblieft.", "Je moet terug naar het begin.", "Try again, please.", "Oeps, scan opnieuw.", "Dat was niet de bedoeling.", "Je hebt mij verkeerd gelezen.", "Nogmaals vanaf het begin.", "Probeer opnieuw om verder te gaan.", "Scan niet herkend, probeer opnieuw.", "Je hebt opnieuw een kans.", "Begin maar opnieuw.", "Helaas, deze poging telt niet.", "Je bent mij aan het scannen, probeer opnieuw.", "Opnieuw scannen vereist.", "Dit is niet de juiste scan.", "Probeer het nog een tweede keer.", "Start een nieuwe poging.", "Je hebt mij niet correct gescand.", "Probeer opnieuw, je kunt het.", "Scan nog eens voor de zekerheid.", "Er ging iets mis, begin opnieuw.", "Je moet nog een keer scannen.", "Foutje, probeer opnieuw.", "Deze ronde moet opnieuw.", "Je scan is afgekeurd.", "Probeer het nog een laatste keer.", "Begin opnieuw en let goed op.", "Je hebt mij niet gevonden.", "Scan opnieuw om mij te vinden.", "Dat was helaas verkeerd.", "Nog een keer vanaf het begin.", "Je poging is mislukt, probeer opnieuw.", "Try again later.", "Please scan again.", "Start over.", "Wrong scan, try again.", "Scan failed, please retry.", "You need to try again.", "Let's start over.", "One more attempt.", "Please try once more.", "Restart and try again.", "Je hebt mij gescand, maar niet goed genoeg.", "Helaas, opnieuw proberen.", "Je moet nog eens goed kijken.", "Probeer het gewoon opnieuw.", "Scan opnieuw en begin opnieuw.", "Je bent niet helemaal goed bezig.", "Deze keer opnieuw proberen.", "Het resultaat klopt niet.", "We beginnen gewoon opnieuw.", "Je scan is verkeerd uitgevoerd.", "Oeps, nog een poging.", "Je hebt de verkeerde persoon gescand.", "Scan opnieuw en controleer het resultaat.", "Dat werkte niet, probeer opnieuw.", "Begin opnieuw met scannen.", "Je hebt mij niet correct gevonden.", "Probeer opnieuw vanaf het begin.", "Scan opnieuw, misschien lukt het nu.", "Helaas, geen geldig resultaat.", "Je moet het nogmaals uitvoeren.", "Je hebt mij al eens eerder gescand.", "Opnieuw proberen is altijd mogelijk.", "Je scan is niet goed doorgekomen.", "Probeer opnieuw te scannen.", "Begin opnieuw, deze poging is voorbij.", "Nog niet goed, probeer opnieuw.", "Je bent bijna goed, probeer nog eens.", "Scan opnieuw voor een beter resultaat.", "Deze keer lukt het misschien wel.", "Je moet het opnieuw uitvoeren.", "Probeer opnieuw, foutje gemaakt.", "Je hebt mij niet juist geregistreerd.", "Start opnieuw met een schone lei.", "Scan opnieuw om door te gaan.", "Oeps, verkeerde scan.", "Helaas, probeer het nogmaals.", "Je hebt opnieuw gescand, maar zonder resultaat.", "Begin nog eens helemaal opnieuw.", "Deze poging was niet succesvol.", "Je moet opnieuw van start gaan.", "Try again, you got this.", "Retry your scan.", "Please start again.", "Scan me again.", "Not recognized, try again.", "Something went wrong, retry.", "Invalid scan, start over.", "Try one more time.", "Your scan failed.", "Please restart the process.", "Je hebt mij gescand, maar ik herken je niet.", "Scan opnieuw, ik wacht wel.", "Dat was niet helemaal juist.", "Probeer opnieuw, zonder fouten.", "Je moet het nog eens overdoen.", "Helaas, de scan is mislukt.", "Begin opnieuw en probeer beter.", "Nog een scan en dan opnieuw.", "Je hebt mij niet goed geregistreerd.", "Probeer opnieuw, deze keer lukt het.", "Scan opnieuw, verkeerde herkenning.", "Je moet helemaal opnieuw beginnen.", "Dat is niet de juiste manier.", "Je hebt een nieuwe poging nodig.", "Opnieuw beginnen is de enige optie.", "Helaas, geen herkenning gevonden.", "Probeer nog eens, ik geloof in je.", "Scan opnieuw en maak geen fouten.", "Je hebt mij verkeerd geïdentificeerd.", "Begin opnieuw, alles is mislukt.", "Oepsie, probeer nog eens.", "Niet gelukt, volgende poging.", "Je scan moet opnieuw uitgevoerd worden.", "Scan opnieuw voor een nieuwe kans.", "Begin opnieuw, vanaf het allereerste begin.", "Je hebt mij gescand, maar dat telt niet.", "Foutieve scan, probeer opnieuw.", "Je kunt het beter, probeer nog eens.", "Nogmaals proberen, alsjeblieft.", "Je hebt opnieuw een scan nodig.", "Scan opnieuw, ik ben er nog.", "Helaas, terug naar start.", "Probeer het nog een keertje opnieuw.", "Dat was een mislukte poging.", "Je moet het opnieuw doen.", "Scan opnieuw en probeer geluk te hebben.", "Niet herkend, begin opnieuw.", "Je hebt mij niet kunnen scannen.", "Opnieuw beginnen, geen probleem.", "Probeer nog een keer, misschien lukt het.", "Scan opnieuw, de eerste poging mislukte.", "Je bent nog niet klaar, probeer opnieuw.", "Begin opnieuw en vergeet niets.", "Verkeerd resultaat, opnieuw proberen.", "Je hebt mij gescand, maar ik ben niet overtuigd.", "Nog één scan en dan opnieuw.", "Helaas, je moet opnieuw beginnen.", "Probeer opnieuw, scan opnieuw, begin opnieuw.", "Je hebt mij gescand, nu mag je opnieuw proberen.", "GAME OVER, TRY AGAIN!"];
+let previous = -1;
+function showRandomPhrase() {
+  let index;
+  do { index = Math.floor(Math.random() * phrases.length); }
+  while (phrases.length > 1 && index === previous);
+  previous = index;
+  document.getElementById('phrase').textContent = phrases[index];
+}
+showRandomPhrase();
+</script>
+</body>
+</html>
